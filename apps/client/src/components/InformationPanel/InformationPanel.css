@@ -1,0 +1,122 @@
+.information-panel {
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    padding: 21px 15px 24px 18px;
+}
+
+.information-panel.scroll {
+    padding: 21px 49px 24px 18px;
+}
+
+.information-panel ul {
+    list-style-type: none;
+}
+
+.information-panel__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--color-black);
+    padding: 0 21px 5px 11px;
+}
+
+.information-panel__head li {
+    color: var(--color-black);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.information-panel__head li:nth-child(1),
+.information-panel__body li div:nth-child(1) {
+    width: 175px;
+    text-align: left;
+}
+
+.information-panel__head li:nth-child(2),
+.information-panel__body li div:nth-child(2) {
+    width: 105px;
+}
+
+.information-panel__head li:nth-child(3),
+.information-panel__body li div:nth-child(3) {
+    width: 114px;
+}
+
+.information-panel__head li:nth-child(4),
+.information-panel__body li div:nth-child(4) {
+    width: 80px;
+}
+
+.information-panel__head li:nth-child(5),
+.information-panel__body li div:nth-child(5) {
+    width: 35px;
+}
+
+.information-panel__body {
+    overflow: auto;
+    max-height: 726px;
+}
+
+.information-panel__body::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+.information-panel__body::-webkit-scrollbar-track {
+    background: #C6C6C6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle */
+.information-panel__body::-webkit-scrollbar-thumb {
+    background: #17181C;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.information-panel__body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.information-panel.scroll .information-panel__body {
+    width: calc(100% + 34px);
+    padding-right: 21px;
+}
+
+.information-panel__body li {
+    margin-top: 10px;
+    border-radius: 5px;
+    background: var(--color-light-gray);
+    height: 56px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 21px 0 11px;
+    font-size: 19px;
+    color: var(--color-black);
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+.information-panel__status {
+    width: 114px;
+    height: 32px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    color: #fff;
+}

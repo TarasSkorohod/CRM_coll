@@ -1,0 +1,432 @@
+.add-user {
+    appearance: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    background-color: var(--color-green);
+    font-family: calibri, sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.form-add-user {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 15px 30px;
+}
+
+.form-add-user select,
+.form-add-user input {
+    width: 296px;
+}
+
+.user-title {
+    color: var(--color-black);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.users-wrapper > div {
+    min-width: 338px;
+}
+
+.users-list {
+    list-style-type: none;
+    overflow: auto;
+    max-height: 685px;
+    width: 338px;
+}
+
+.users-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+.users-list::-webkit-scrollbar-track {
+    background: #C6C6C6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle */
+.users-list::-webkit-scrollbar-thumb {
+    background: #17181C;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.users-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.users-item {
+    background-color: var(--color-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 318px;
+    width: 100%;
+    min-height: 121px;
+    padding: 10px 15px;
+}
+
+.users-item:not(:first-child) {
+    margin-top: 20px;
+}
+
+.users-item-content p {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.users-item-content span {
+    font-size: 19px;
+}
+
+.users-item-add {
+    background-color: var(--color-aque);
+    font-family: calibri, sans-serif;
+    appearance: none;
+    border: none;
+    border-radius: 100%;
+    color: var(--color-white);
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.user-info-wrapper {
+    border-radius: 5px;
+    background-color: var(--color-black);
+    width: 100%;
+    margin-top: 42px;
+    padding: 15px;
+    margin-bottom: 65px;
+}
+
+.user-info-close {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 12px;
+}
+
+.user-info-title {
+    color: #FFF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.user-info-item, .user-info-item-list li,
+.user-info-item-modal-list li {
+    position: relative;
+    border-radius: 5px;
+    background-color: var(--color-light-gray);
+    padding: 8px 10px 8px 19px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-black);
+    font-size: 18px;
+    margin-bottom: 10px;
+    min-height: 38px;
+}
+
+.user-info-item button {
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.user-info-item input {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 18px;
+    padding-left: 60px;
+}
+
+.user-info-item-list {
+    list-style-type: none;
+}
+
+.user-info-item-list-head {
+    display: flex;
+    align-items: center;
+}
+
+.user-info-item-list-head button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.user-info-item-list.scroll {
+    overflow: auto;
+    max-height: 380px;
+}
+
+.user-info-item-list.scroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+.user-info-item-list.scroll::-webkit-scrollbar-track {
+    background: #C6C6C6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle */
+.user-info-item-list.scroll::-webkit-scrollbar-thumb {
+    background: darkgray;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.user-info-item-list.scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.user-info-item-list.scroll {
+    padding-right: 15px;
+}
+
+.user-info-item-list li {
+    display: block;
+}
+
+.user-info-item-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.user-info-item-buttons button:nth-child(1) {
+    background-color: var(--color-green);
+    width: 23px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 27px;
+}
+
+.user-info-item-buttons button:nth-child(2) svg {
+    width: 16px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.user-info-item-chk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    gap: 15px;
+    width: 100%;
+    border-top: 1px solid #0E0E0E;
+    padding-top: 15px;
+}
+
+.user-info-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.user-info-bottom button {
+    appearance: none;
+    border: none;
+    background: var(--color-red);
+    width: calc(50% - 5px);
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-family: calibri, sans-serif;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.user-info-bottom button:nth-child(3) {
+    width: 100%;
+}
+
+.user-group-wrapper {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 20px 35px 40px;
+}
+
+.modal-group .user-group-wrapper {
+    padding: 20px 0 40px;
+}
+
+.user-group-head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.user-group-head p {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.user-group-head-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.user-group-head-buttons .btn {
+    width: 119px;
+}
+
+.modal-group .modal__head {
+    padding: 12px 35px 0;
+}
+
+.user-group-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    max-width: 563px;
+    width: 100%;
+}
+
+.user-group-list li {
+    width: calc(100% / 3 - 7px);
+    border-radius: 5px;
+    background: #FFF;
+    padding: 7px 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-black);
+    cursor: pointer;
+}
+
+.form-create-telephony {
+    padding: 24px 15px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-create-telephony input {
+    width: 296px;
+    font-size: 18px;
+}
+
+.form-create-telephony li {
+    color: rgba(14, 14, 14, 0.60);
+}
+
+.user-info-item-list li {
+    padding: 7px 10px 7px 19px;
+    font-size: 20px;
+    gap: 15px;
+    margin: 0;
+    min-width: 296px;
+}
+
+.user-info-item-list li:not(:first-child) {
+    margin-top: 10px;
+}
+
+.user-info-item-modal-list li {
+    justify-content: space-between;
+    gap: 15px;
+    min-width: 296px;
+}
+
+.user-info-item-modal-list span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.user-info-item-modal-list li button {
+    border: none;
+    background: transparent;
+    display: flex;
+    cursor: pointer;
+}
+
+.user-info-item-modal-list {
+    list-style-type: none;
+    padding: 27px 15px 30px;
+}
+
+.form-edit-telephony {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 27px 15px 37px;
+}
+
+.form-edit-telephony input {
+    min-width: 296px;
+    width: 100%;
+}

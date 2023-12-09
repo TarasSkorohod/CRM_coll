@@ -1,0 +1,776 @@
+:root {
+    --color-white: #fff;
+    --color-red: #FC2828;
+    --color-green: #46DA2E;
+    --color-yellow: #EDDA2B;
+    --color-aque: #24CFDA;
+    --color-light-gray: #D1D1D1;
+    --color-black: #0E0E0E;
+    --color-grad-black1: linear-gradient(180deg, #141F2F 0%, #111 100%);
+    --color-grad-black2: linear-gradient(0deg, #17181C 0%, #17181C 100%), #121212;
+    --color-grad-blue: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #068FFF;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto-Regular.woff2);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto-Bold.woff2);
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: calibri;
+    src: url(fonts/Calibri.woff2);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: calibri;
+    src: url(fonts/Calibri-Bold.woff2);
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: calibri, sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    font-size: 20px;
+    line-height: normal;
+    background: var(--color-grad-black1) no-repeat center;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1420px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.admin-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.admin-wrapper .btn-logout {
+    margin-left: auto;
+    margin-bottom: 55px;
+}
+
+.admin-wrapper {
+    width: 100%;
+}
+
+.loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: var(--color-aque);
+    display: block;
+    margin: 0 auto;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+.loader:after {
+    color: var(--color-red);
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    0%,
+    100% {
+        box-shadow: .2em 0 0 0 currentcolor;
+    }
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+        box-shadow: 0 .2em 0 0 currentcolor;
+    }
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+        box-shadow: 0 -.2em 0 0 currentcolor;
+    }
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
+
+
+/* LOGIN */
+
+.form-login {
+    height: 100vh;
+    background: url(./images/login-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.form-login__logo {
+    width: 347px;
+    min-width: 347px;
+    height: 127px;
+    margin: 0 auto 30px;
+    text-align: center;
+    display: block;
+}
+
+.form-login form input.error-login {
+    border: 2px solid var(--color-red);
+}
+
+.error-login__text::before {
+    display: inline;
+    content: "⚠ ";
+}
+
+.form-login form {
+    border-radius: 22px;
+    background-color: var(--color-white);
+    position: absolute;
+    right: 87px;
+    top: 40px;
+    bottom: 40px;
+    width: 525px;
+    padding: 25px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-login__title {
+    color: var(--color-black);
+    text-align: center;
+    font-family: roboto, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.form-login form input {
+    outline: none;
+    appearance: none;
+    width: 100%;
+    height: 63px;
+    border-radius: 3px;
+    border: 2px solid var(--color-black);
+    padding: 0 20px;
+    color: var(--color-black);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 35px;
+}
+
+.form-login form input._error, ._error {
+    border: 1px solid var(--color-red);
+}
+
+.form-login form input::placeholder {
+    font-family: calibri, sans-serif;
+    font-weight: 400;
+    color: var(--color-black);
+    opacity: 1;
+}
+
+.form-login__btn {
+    appearance: none;
+    font-family: roboto, sans-serif;
+    font-weight: 700;
+    background-color: #005EB4;
+    color: var(--color-white);
+    height: 63px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    line-height: normal;
+    border: none;
+    margin: 30px 0 21px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.form-login__btn:hover {
+    opacity: 0.9;
+}
+
+.form-login__password {
+    appearance: none;
+    font-family: roboto, sans-serif;
+    background-color: #005EB4;
+    color: var(--color-white);
+    height: 33px;
+    width: 20%;
+    margin-top: 3px;
+    text-align: center;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.form-login__password:hover {
+    opacity: 0.9;
+}
+
+.form-login__psw-reset {
+    font-family: roboto, sans-serif;
+    appearance: none;
+    background: transparent;
+    text-align: left;
+    width: fit-content;
+    border: none;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.form-login__psw-reset:hover {
+    color: #005EB4;
+}
+
+/* \LOGIN */
+
+/* BUTTON */
+
+.btn {
+    appearance: none;
+    border: none;
+    font-family: calibri, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 5px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+.logout__btn {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    appearance: none;
+    font-family: roboto, sans-serif;
+    background-color: transparent;
+    text-align: center;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.logout__btn svg {
+    width: 30px;
+    height: 30px;
+}
+
+.btn.btn-green {
+    background: var(--color-green)
+}
+
+.btn.btn-red {
+    background: var(--color-red)
+}
+
+.btn.btn-yellow {
+    background: var(--color-yellow)
+}
+
+.btn.btn-aqua {
+    background: var(--color-aque)
+}
+
+.btn-send {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.btn-logout {
+    color: var(--color-white);
+    font-family: roboto, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.btn-logout .side-bar__nav__icon {
+    width: 39px;
+}
+
+.btn-logout .side-bar__nav__icon svg {
+    margin: 0 auto;
+    display: block;
+}
+
+/* \BUTTON */
+
+/* CHECKBOX */
+
+.checkbox svg rect, .checkbox svg path {
+    transition: all .3s;
+    user-select: none;
+}
+
+.checkbox input, .checkbox-switcher input {
+    display: none;
+}
+
+.checkbox svg path {
+    opacity: 0;
+}
+
+.checkbox input:checked ~ svg path {
+    opacity: 1;
+}
+
+.checkbox input:checked ~ svg rect {
+    fill: #0E0E0E;
+}
+
+.checkbox-switcher span {
+    position: relative;
+    width: 60px;
+    min-width: 60px;
+    height: 28px;
+    display: flex;
+    border-radius: 30px;
+    background: var(--color-red);
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s;
+}
+
+.checkbox-switcher span::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0E0E0E;
+    border-radius: 100%;
+    transition: all .3s;
+}
+
+.checkbox-switcher.white span::before {
+    background-color: #fff;
+}
+
+.checkbox-switcher input:checked ~ span {
+    background: var(--color-green);
+}
+
+.checkbox-switcher input:checked ~ span::before {
+    left: 32px;
+}
+
+/* \CHECKBOX */
+
+/* SELECT */
+
+.select-custom {
+    appearance: none;
+    outline: none;
+    font-family: calibri, sans-serif;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 38px 0 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    border: none;
+    color: var(--color-black);
+    border-radius: 5px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='14' viewBox='0 0 20 14' fill='none'%3E%3Cpath d='M18.4473 0.341861C18.5318 0.233478 18.632 0.147505 18.7424 0.0888483C18.8527 0.0301916 18.971 1.8463e-07 19.0904 1.79788e-07C19.2099 1.74946e-07 19.3282 0.0301916 19.4385 0.0888483C19.5489 0.147505 19.6491 0.233478 19.7336 0.341861C19.8181 0.450244 19.8851 0.578914 19.9308 0.720523C19.9765 0.862132 20 1.01391 20 1.16719C20 1.32046 19.9765 1.47224 19.9308 1.61385C19.8851 1.75546 19.8181 1.88413 19.7336 1.99251L10.6431 13.6579C10.5587 13.7663 10.4585 13.8524 10.3481 13.9111C10.2378 13.9698 10.1195 14 10 14C9.88054 14 9.76225 13.9698 9.65189 13.9111C9.54153 13.8524 9.44127 13.7663 9.35685 13.6579L0.2664 1.99251C0.0958267 1.77362 -5.95018e-07 1.47674 -6.04854e-07 1.16719C-6.14689e-07 0.85763 0.0958266 0.560751 0.2664 0.341862C0.436974 0.122972 0.668322 9.26582e-07 0.90955 9.16803e-07C1.15078 9.07024e-07 1.38213 0.122972 1.5527 0.341862L10 11.1834L18.4473 0.341861Z' fill='black'/%3E%3C/svg%3E");
+    /*no-repeat  12px*/
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+.select-custom.placeholder option:nth-child(1) {
+    display: none;
+}
+
+.select-custom.black {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='14' viewBox='0 0 20 14' fill='none'%3E%3Cpath d='M18.4473 0.341861C18.5318 0.233478 18.632 0.147505 18.7424 0.0888483C18.8527 0.0301916 18.971 1.8463e-07 19.0904 1.79788e-07C19.2099 1.74946e-07 19.3282 0.0301916 19.4385 0.0888483C19.5489 0.147505 19.6491 0.233478 19.7336 0.341861C19.8181 0.450244 19.8851 0.578914 19.9308 0.720523C19.9765 0.862132 20 1.01391 20 1.16719C20 1.32046 19.9765 1.47224 19.9308 1.61385C19.8851 1.75546 19.8181 1.88413 19.7336 1.99251L10.6431 13.6579C10.5587 13.7663 10.4585 13.8524 10.3481 13.9111C10.2378 13.9698 10.1195 14 10 14C9.88054 14 9.76225 13.9698 9.65189 13.9111C9.54153 13.8524 9.44127 13.7663 9.35685 13.6579L0.2664 1.99251C0.0958267 1.77362 -5.95018e-07 1.47674 -6.04854e-07 1.16719C-6.14689e-07 0.85763 0.0958266 0.560751 0.2664 0.341862C0.436974 0.122972 0.668322 9.26582e-07 0.90955 9.16803e-07C1.15078 9.07024e-07 1.38213 0.122972 1.5527 0.341862L10 11.1834L18.4473 0.341861Z' fill='white'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+.select-custom.gray {
+    color: rgba(14, 14, 14, 0.60);
+    background-color: var(--color-light-gray);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='14' viewBox='0 0 20 14' fill='none'%3E%3Cpath d='M18.4473 0.341861C18.5318 0.233478 18.632 0.147505 18.7424 0.0888483C18.8527 0.0301916 18.971 1.8463e-07 19.0904 1.79788e-07C19.2099 1.74946e-07 19.3282 0.0301916 19.4385 0.0888483C19.5489 0.147505 19.6491 0.233478 19.7336 0.341861C19.8181 0.450244 19.8851 0.578914 19.9308 0.720523C19.9765 0.862132 20 1.01391 20 1.16719C20 1.32046 19.9765 1.47224 19.9308 1.61385C19.8851 1.75546 19.8181 1.88413 19.7336 1.99251L10.6431 13.6579C10.5587 13.7663 10.4585 13.8524 10.3481 13.9111C10.2378 13.9698 10.1195 14 10 14C9.88054 14 9.76225 13.9698 9.65189 13.9111C9.54153 13.8524 9.44127 13.7663 9.35685 13.6579L0.2664 1.99251C0.0958267 1.77362 -5.95018e-07 1.47674 -6.04854e-07 1.16719C-6.14689e-07 0.85763 0.0958266 0.560751 0.2664 0.341862C0.436974 0.122972 0.668322 9.26582e-07 0.90955 9.16803e-07C1.15078 9.07024e-07 1.38213 0.122972 1.5527 0.341862L10 11.1834L18.4473 0.341861Z' fill='black'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+}
+
+/* \SELECT */
+
+/* INPUT DOUBLE TIME */
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.double-time {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: var(--color-white);
+    border-radius: 4px 5px;
+    text-align: center;
+}
+
+.double-time span {
+    font-family: calibri, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-black);
+    padding: 0 3px;
+}
+
+.double-time input {
+    border: none;
+    outline: none;
+    font-family: calibri, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* \INPUT DOUBLE TIME */
+
+/* INPUTS */
+
+.form-control {
+    position: relative;
+}
+
+.form-control input {
+    appearance: none;
+    outline: none;
+    font-family: calibri, sans-serif;
+    color: rgba(14, 14, 14, 0.60);
+    font-size: 20px;
+    font-weight: 400;
+    background-color: var(--color-light-gray);
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+}
+.form-control input._error {
+    border: 1px solid var(--color-red);
+}
+.form-control__select{
+    appearance: none;
+    outline: none;
+    font-family: calibri, sans-serif;
+    color: rgba(14, 14, 14, 0.60);
+    font-size: 20px;
+    font-weight: 400;
+    background-color: var(--color-light-gray);
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+}
+
+/* \INPUTS */
+
+/* USERS WRAPPER */
+
+.users-wrapper {
+    background-color: var(--color-white);
+    padding: 27px 21px 30px;
+    border-radius: 5px;
+    margin-top: 36px;
+    display: flex;
+    gap: 20px;
+}
+
+/* \USERS WRAPPER */
+
+/* ADMIN SETTINGS */
+
+.admin-settings-title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-status-wrapper {
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 20px;
+    min-height: calc(100vh - 200px);
+}
+
+/* \ADMIN SETTINGS */
+
+/* COLOR PICKER */
+
+.color-picker {
+    position: relative;
+    width: 286px;
+}
+
+.color-picker-head {
+    display: flex;
+    height: 38px;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: flex-end;
+    padding: 0 10px;
+}
+
+.color-picker-body {
+    position: absolute;
+    list-style-type: none;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.color-picker-body li {
+    height: 38px;
+    cursor: pointer;
+}
+
+/* \COLOR PICKER */
+
+/* DATEPICKER */
+
+.custom-date-picker {
+    position: relative;
+    border-radius: 5px;
+    background-color: #fff;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.custom-date-picker .react-datepicker {
+    border: none;
+    border-radius: 0;
+}
+
+.custom-date-picker .react-datepicker__header {
+    border: none;
+    background-color: transparent;
+    padding: 16px 17px 10px;
+}
+
+.custom-date-picker .react-datepicker__current-month {
+    color: #292929;
+    font-family: calibri, sans-serif;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(14, 14, 14, 0.60);
+}
+
+.custom-date-picker .react-datepicker__navigation-icon::before {
+    border-color: #000;
+    border-width: 2px 2px 0 0;
+    top: 15px;
+}
+
+.custom-date-picker .react-datepicker__navigation--previous {
+    left: 20px;
+}
+
+.custom-date-picker .react-datepicker__navigation--next {
+    right: 20px;
+}
+
+.custom-date-picker .react-datepicker__day-name {
+    color: #068FFF;
+    font-family: calibri, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.custom-date-picker .react-datepicker__input-time-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 0 10px 0;
+    padding: 0 17px;
+}
+
+.custom-date-picker .react-datepicker-time__caption {
+    color: #0E0E0E;
+    font-family: calibri, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.custom-date-picker .react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input {
+    margin-left: 0;
+}
+
+.custom-date-picker .react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input {
+    width: 67px;
+    border: 0 !important;
+    color: #292929;
+    font-family: calibri, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    outline: none;
+    text-align: left;
+    border-bottom: 1px solid #0E0E0E !important;
+}
+
+/* \DATEPICKER */
+
+
+/*/NotFound*/
+
+.custom-not-found__block {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--color-grad-black1);
+    color: white;
+    flex-direction: column;
+}
+
+.custom-not-found__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+}
+
+.custom-not-found__info {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+._error {
+    border: 1px solid var(--color-red) !important;
+}
+
+.modals-width .modal__wrapper {
+    position: relative;
+    width: 1065px;
+    min-height: 200px;
+}
+
+.modals-width .loader {
+    margin-top: 50px;
+}
+
+.loader-working {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modals-width .user-group-list li {
+    margin-top: 0 !important;
+}

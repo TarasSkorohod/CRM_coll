@@ -1,0 +1,133 @@
+.call-panel-status {
+    position: relative;
+    background-color: var(--color-black);
+    border-radius: 5px;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1131px;
+    margin: 0 auto 110px;
+}
+
+.call-panel-status-timer {
+    font-size: 38px;
+    font-weight: 700;
+    margin-right: 37px;
+}
+
+.call-panel-status-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.call-panel-status-list li {
+    padding: 6px 10px;
+    min-width: 130px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.call-panel-status-current {
+    position: absolute;
+    right: 50px;
+    bottom: 100%;
+    padding: 6px 10px;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    min-width: 129px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.call-panel-mirror {
+    position: absolute;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
+    top: 100%;
+    padding: 11px 9px 10px 30px;
+    color: var(--color-black);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 528px;
+}
+
+.call-panel-mirror::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 10px;
+    left: 0;
+    top: -5px;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.call-panel-mirror-number {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.call-panel-mirror-number span {
+    display: block;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.call-panel-mirror-name {
+    font-size: 24px;
+}
+
+.call-panel-mirror-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.call-panel-mirror-nav > button {
+    appearance: none;
+    font-family: calibri, sans-serif;
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    width: 129px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--color-black);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.call-panel-mirror-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.call-panel-mirror-buttons button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button.muted svg circle {
+    fill: var(--color-red);
+}
